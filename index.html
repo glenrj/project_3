@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/scripts.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Open Stalls</h1>
+		<h2>Enter an address and we'll help you find a restroom. Please be as specific as possible.</h2>
+		<div class="form" >
+			<label for="address">Address:</label>
+			<input type="text" name="address">
+
+			<input type="checkbox" name="requirement" value="Unisex">Only show unisex bathrooms<br>
+			<input type="checkbox" name="requirement" value="ADA">Only show bathrooms that are ADA accessible<br>
+
+			<div class='submit'>
+				<input type="submit" value="Search" id="submitLocation">
+			</div>
+		</div>
+		<div class="bathrooms">
+				
+		</div>
+	</div>
+</body>
+</html>
