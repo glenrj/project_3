@@ -1,0 +1,101 @@
+// VARIABLES
+$accent-color: #E8E8E8;
+$dark-background: #252523;
+ // -- rgb(37, 37, 35)
+ $accent-color-2: #BFBFBF;
+
+
+body {
+	font-size: 62.5%;
+	margin: 0px 0px;
+}
+
+h1 {
+	font-size: 4rem;
+	font-family: 'Abel', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	font-weight: 300;
+	margin: 0 auto;
+	text-align: center;
+	color: $accent-color;
+	padding-top: 25vh
+
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.4rem;
+	font-weight: 300;
+	text-align: center;
+	color: $accent-color;
+	margin: 0 auto;
+	margin-bottom: 25px
+}
+
+.wrapper {
+	// max-width: 1080px;
+	margin: 0 auto;
+}
+
+
+main {
+	background: url(../assets/dan-watson-4326-unsplash.jpg);
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
+
+.content {
+	background: rgba(37, 37, 35, 0.9);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 25px 10px;
+	margin: 0 auto;
+	max-width: 900px;
+	margin-top: 100px;
+	border: 1px solid $accent-color-2;
+}
+
+.form {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 300;
+	text-align: center;
+	color: $accent-color;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	.field {
+		margin: 5px 0px;
+	}
+	input[type='checkbox'] {
+		margin-right: 10px;
+		padding-bottom: 5px
+	}
+	input[type='text'] {
+		width: 200px;
+	}
+}
+
+.submit {
+	margin-top: 25px;
+	input {
+		border: 2px solid $accent-color;
+		background: none;
+		font-size: 1.4rem;
+		font-family: 'Abel', sans-serif;
+		text-transform: uppercase;
+		color: $accent-color;
+		padding: 10px;
+		letter-spacing: 3px;
+		transition: 1s;
+		&:hover{
+			background:  $accent-color-2;
+			color: $dark-background;
+		}
+		
+
+	}
+}
