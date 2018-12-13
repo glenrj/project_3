@@ -1,5 +1,5 @@
 // VARIABLES
-$accent-color: #E8E8E8;
+$accent-color: #F7F7F7;
 $dark-background: #252523;
  // -- rgb(37, 37, 35)
  $accent-color-2: #BFBFBF;
@@ -42,6 +42,7 @@ h2 {
 main {
 	background: url(../assets/dan-watson-4326-unsplash.jpg);
 	background-size: cover;
+	background-attachment: fixed;
 	height: 100vh;
 	width: 100%;
 }
