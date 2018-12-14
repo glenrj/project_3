@@ -95,7 +95,7 @@ main {
 		color: $accent-color;
 		padding: 10px;
 		letter-spacing: 3px;
-		transition: 1s;
+		transition: 0.5s;
 		&:hover{
 			background:  $accent-color-2;
 			color: $dark-background;
@@ -106,26 +106,39 @@ main {
 }
 
 .bathrooms {
-	border: 1px solid red;
 	margin-top: 25px;
 	ul {
+		margin: 0 auto;
 		width: 100%;
-	display: flex;
-	flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		justify-content: space-between;
+		padding: 0px;
 	}
 	li {
-		width: 30%;
+		border: 1px solid $accent-color;
+		margin-top: 25px;
+		width: 47%;
+		padding: 10px;
 		text-align: center;
 	}
 	h2 {
 		font-family: 'Abel', sans-serif;
 		text-transform: uppercase;
 		font-size: 1.6rem;
+		text-align: center;
+		font-weight: 600;
 	}
 	p {
 		color: $accent-color;
 		font-family: 'Roboto', san-serif;
 		font-size: 1.2rem;
+	}
+	.address {
+		font-family: 'Abel', san-serif;
+		font-size: 1.4rem;
+		text-align: center;
 	}
 }
 

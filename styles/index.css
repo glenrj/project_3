@@ -87,34 +87,48 @@ main {
     color: #F7F7F7;
     padding: 10px;
     letter-spacing: 3px;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s; }
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
     .submit input:hover {
       background: #BFBFBF;
       color: #252523; }
 
 .bathrooms {
-  border: 1px solid red;
   margin-top: 25px; }
   .bathrooms ul {
+    margin: 0 auto;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    list-style: none;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0px; }
   .bathrooms li {
-    width: 30%;
+    border: 1px solid #F7F7F7;
+    margin-top: 25px;
+    width: 47%;
+    padding: 10px;
     text-align: center; }
   .bathrooms h2 {
     font-family: 'Abel', sans-serif;
     text-transform: uppercase;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600; }
   .bathrooms p {
     color: #F7F7F7;
     font-family: 'Roboto', san-serif;
     font-size: 1.2rem; }
+  .bathrooms .address {
+    font-family: 'Abel', san-serif;
+    font-size: 1.4rem;
+    text-align: center; }
 
 footer {
   color: #F7F7F7;
