@@ -1,6 +1,9 @@
 body {
   font-size: 62.5%;
-  margin: 0px 0px; }
+  margin: 0px 0px;
+  background: url(../assets/dan-watson-4326-unsplash.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
 
 h1 {
   font-size: 4rem;
@@ -29,8 +32,8 @@ main {
   background: url(../assets/dan-watson-4326-unsplash.jpg);
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 100px; }
 
 .content {
   background: rgba(37, 37, 35, 0.9);
@@ -90,3 +93,36 @@ main {
     .submit input:hover {
       background: #BFBFBF;
       color: #252523; }
+
+.bathrooms {
+  border: 1px solid red;
+  margin-top: 25px; }
+  .bathrooms ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .bathrooms li {
+    width: 30%;
+    text-align: center; }
+  .bathrooms h2 {
+    font-family: 'Abel', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.6rem; }
+  .bathrooms p {
+    color: #F7F7F7;
+    font-family: 'Roboto', san-serif;
+    font-size: 1.2rem; }
+
+footer {
+  color: #F7F7F7;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Abel', sans-serif;
+  font-size: 1rem; }
+  footer a {
+    color: #BFBFBF; }
+  footer img {
+    width: 12px; }

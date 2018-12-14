@@ -16,9 +16,9 @@ $( document ).ready(function() {
 
 		e.preventDefault();
 
-		// if ($('#unisex').is(":checked")) {
-		//       alert('it works');
-		//     }
+		if ($('#unisex').is(":checked")) {
+		      alert('it works');
+		    }
 
 		const address = $('[name=address]').val();
 		userLocation.address = address;
@@ -68,7 +68,7 @@ bathroomApp.getBathrooms = (latitude, longitude) => {
 
 bathroomApp.displayBathrooms  = (bathrooms) => {
 	bathrooms.map(function(bathrooms) {
-		const bathroomHtml = 	
+		// const bathroomHtml = 	
 		
 	}).join('');
 	$('#bathrooms').empty().append(artHtml);
