@@ -1,15 +1,17 @@
 
-// Geocode format:
-// https://geocode.xyz/location?outputformat or https://geocode.xyz/?locate=location&outputformat
-// no API key = 1 request per second
+// Bathroom App Object
+
 const bathroomApp = {
-	apiKey: 'AIzaSyBFCYLY2DiSYIwhBkpvrcLZJJ95uJZZdX4',
+	apiKey: '9083d4eaf36ba7',
 	ada: false,
 	unisex: false
 
 }
 
+// Empty Object to hold location data
+
 const userLocation = {}
+
 
 
 $( document ).ready(function() {
@@ -31,31 +33,31 @@ $( document ).ready(function() {
 		}
 
 		const address = $('[name=address]').val();
-		userLocation.address = address;
+		bathroomApp.address = address;
 
-		bathroomApp.getCoordinates(userLocation.address);
+		bathroomApp.getCoordinates(bathroomApp.address);
 	});
 
 });
 
+// Get coordinates from geocoding API using user's address:
+
 bathroomApp.getCoordinates = (address) => {
 	$.ajax({
-		url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${bathroomApp.apiKey}`,
+		url: `https://us1.locationiq.com/v1/search.php?key=${bathroomApp.apiKey}&q=${address}&format=json`,
 		method: 'GET',
 		dataType: 'json',
 	}).then(function(response) {
 		// console.log(response);
-		const latitude = response.results[0].geometry.location.lat;
-		const longitude = response.results[0].geometry.location.lng;
+		const latitude = response[0].lat;
+		const longitude = response[0].lon;
 		userLocation.latt = latitude;
 		userLocation.longt = longitude;
 		bathroomApp.getBathrooms(userLocation.latt, userLocation.longt);
 	});
 }
 
-bathroomApp.getRequirements = () => {
-
-}
+// Get initial bathroom list from coordinates:
 
 bathroomApp.getBathrooms = (latitude, longitude) => {
 	$.ajax({
@@ -69,14 +71,16 @@ bathroomApp.getBathrooms = (latitude, longitude) => {
 			unisex: bathroomApp.unisex
 		}
 	}).then(function(response) {
-		console.log(response);
+		// console.log(response);
 		bathroomApp.displayBathrooms(response);
 
 	});
 }
 
+// Add next 10 bathrooms to the list:
+
 bathroomApp.displayBathrooms  = (bathrooms) => {
-	console.log(bathrooms);
+	// console.log(bathrooms);
 	const bathroomHtml = bathrooms.map(function(bathrooms) {
 		const bathroomObj = `<li>
 			<h2>${bathrooms.name}</h2>
@@ -88,11 +92,3 @@ bathroomApp.displayBathrooms  = (bathrooms) => {
 	}).join('');
 	$('#bathrooms').empty().append(bathroomHtml);
 }
-
-
-
-// ORIGINAL GEOCODING API (LOCKED ME OUT BUT HERE FOR MY OWN REFERENCE IN CASE THE NEW ONE DOESN'T WORK):
-	// $.ajax({
-	// 	url: `https://geocode.xyz/${address}?json=1`,
-	// 	method: 'GET',
-	// 	dataType: 'json',
