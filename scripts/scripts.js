@@ -80,7 +80,7 @@ bathroomApp.getBathrooms = (latitude, longitude) => {
 // Add next 10 bathrooms to the list:
 
 bathroomApp.displayBathrooms  = (bathrooms) => {
-	// console.log(bathrooms);
+	console.log(bathrooms);
 	const bathroomHtml = bathrooms.map(function(bathrooms) {
 		const bathroomObj = `<li>
 			<h2>${bathrooms.name}</h2>
