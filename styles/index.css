@@ -6,7 +6,7 @@ body {
   background-attachment: fixed; }
 
 h1 {
-  font-size: 4rem;
+  font-size: 4.7rem;
   font-family: 'Abel', sans-serif;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -17,7 +17,7 @@ h1 {
   padding-top: 25vh; }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
   text-align: center;
@@ -54,7 +54,7 @@ main {
   border: 1px solid #BFBFBF; }
 
 .form {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 300;
   text-align: center;
@@ -123,12 +123,17 @@ main {
     font-weight: 600; }
   .bathrooms p {
     color: #F7F7F7;
-    font-family: 'Roboto', san-serif;
+    font-family: 'Open Sans', serif;
+    font-weight: 300;
     font-size: 1.2rem; }
   .bathrooms .address {
     font-family: 'Abel', san-serif;
     font-size: 1.4rem;
     text-align: center; }
+  .bathrooms .descriptionPlaceholder {
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    color: #BFBFBF; }
 
 footer {
   color: #F7F7F7;
@@ -140,3 +145,11 @@ footer {
     color: #BFBFBF; }
   footer img {
     width: 12px; }
+
+.showMore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }

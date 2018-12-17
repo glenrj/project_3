@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 4.7rem;
 	font-family: 'Abel', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 10px;
@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 1.4rem;
 	font-weight: 300;
 	text-align: center;
@@ -64,7 +64,7 @@ main {
 }
 
 .form {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 1.2rem;
 	font-weight: 300;
 	text-align: center;
@@ -132,13 +132,19 @@ main {
 	}
 	p {
 		color: $accent-color;
-		font-family: 'Roboto', san-serif;
+		font-family: 'Open Sans', serif;
+		font-weight: 300;
 		font-size: 1.2rem;
 	}
 	.address {
 		font-family: 'Abel', san-serif;
 		font-size: 1.4rem;
 		text-align: center;
+	}
+	.descriptionPlaceholder {
+		font-style: italic;
+		font-family: 'Open Sans', sans-serif;
+		color: $accent-color-2;
 	}
 }
 
@@ -154,4 +160,9 @@ footer {
 	img {
 		width: 12px;
 	}
+}
+
+.showMore {
+	display: flex;
+	justify-content: center;
 }

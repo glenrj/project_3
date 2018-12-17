@@ -4,8 +4,8 @@
 const bathroomApp = {
 	apiKey: '9083d4eaf36ba7',
 	ada: false,
-	unisex: false
-
+	unisex: false,
+	currentPage: 1
 }
 
 // Empty Object to hold location data
@@ -68,18 +68,73 @@ bathroomApp.getBathrooms = (latitude, longitude) => {
 			lat: latitude,
 			lng: longitude,
 			ada: bathroomApp.ada,
-			unisex: bathroomApp.unisex
+			unisex: bathroomApp.unisex,
+			page: bathroomApp.currentPage
 		}
 	}).then(function(response) {
 		// console.log(response);
 		bathroomApp.displayBathrooms(response);
-
+		bathroomApp.showMoreButton();
+		bathroomApp.showMoreSubmitHandler();
 	});
 }
 
-// Add next 10 bathrooms to the list:
+// Show inital 10 bathrooms:
 
 bathroomApp.displayBathrooms  = (bathrooms) => {
+	console.log(bathrooms);
+	const bathroomHtml = bathrooms.map(function(bathrooms) {
+		if (!bathrooms.directions) {
+		     return `<li>
+     			<h2>${bathrooms.name}</h2>
+     			<p class="address">${bathrooms.street}</p>
+     			<p class="address">${bathrooms.city}</p>
+     			<p class="descriptionPlaceholder">No description provided.</p>								
+     			</li>`
+		}  else {
+			return `<li>
+				<h2>${bathrooms.name}</h2>
+				<p class="address">${bathrooms.street}</p>
+				<p class="address">${bathrooms.city}</p>
+				<p>${bathrooms.directions}</p>								
+				</li>`
+		}
+
+	}).join('');
+	$('#bathrooms').empty().append(bathroomHtml);
+}
+
+// Functions for 'Show More' button:
+
+bathroomApp.showMoreButton = () => {
+	$('#bathroomList').append(`
+		<div class='submit showMore'>
+			<input type="submit" value="Show More" id="showMore">
+		</div>`);
+}
+
+bathroomApp.showMoreSubmitHandler = () => {
+	$('#showMore').on('click', function(e){
+		e.preventDefault();
+		bathroomApp.currentPage = bathroomApp.currentPage + 1;
+		$.ajax({
+			url: 'https://www.refugerestrooms.org/api/v1/restrooms/by_location.json',
+			method: 'GET',
+			dataType: 'json',
+			data: {
+				lat: userLocation.latt,
+				lng: userLocation.longt,
+				ada: bathroomApp.ada,
+				unisex: bathroomApp.unisex,
+				page: bathroomApp.currentPage
+			}
+		}).then(function(response) {
+			bathroomApp.displayMore(response);
+		})
+	});
+}
+
+bathroomApp.displayMore  = (bathrooms) => {
 	console.log(bathrooms);
 	const bathroomHtml = bathrooms.map(function(bathrooms) {
 		const bathroomObj = `<li>
@@ -90,5 +145,6 @@ bathroomApp.displayBathrooms  = (bathrooms) => {
 						</li>`
 			return bathroomObj
 	}).join('');
-	$('#bathrooms').empty().append(bathroomHtml);
+	$('#bathrooms').append(bathroomHtml);
 }
+
