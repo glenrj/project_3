@@ -13,6 +13,7 @@ const bathroomApp = {
 const userLocation = {}
 
 
+// Functions:
 
 $( document ).ready(function() {
 

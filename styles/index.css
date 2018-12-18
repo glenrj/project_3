@@ -26,6 +26,7 @@ h2 {
   margin-bottom: 25px; }
 
 .wrapper {
+  max-width: 1080px;
   margin: 0 auto; }
 
 main {
@@ -129,7 +130,8 @@ main {
   .bathrooms .address {
     font-family: 'Abel', san-serif;
     font-size: 1.4rem;
-    text-align: center; }
+    text-align: center;
+    margin: 0px 0px; }
   .bathrooms .descriptionPlaceholder {
     font-style: italic;
     font-family: 'Open Sans', sans-serif;
@@ -153,3 +155,9 @@ footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+
+@media (max-width: 770px) {
+  .bathrooms ul {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; } }

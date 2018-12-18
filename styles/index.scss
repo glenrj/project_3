@@ -1,8 +1,10 @@
 // VARIABLES
 $accent-color: #F7F7F7;
+// -- (247,247,247)
 $dark-background: #252523;
- // -- rgb(37, 37, 35)
+ // -- (37, 37, 35)
  $accent-color-2: #BFBFBF;
+ // -- (191,191,191)
 
 
 body {
@@ -37,7 +39,7 @@ h2 {
 }
 
 .wrapper {
-	// max-width: 1080px;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
@@ -46,7 +48,6 @@ main {
 	background: url(../assets/dan-watson-4326-unsplash.jpg);
 	background-size: cover;
 	background-attachment: fixed;
-	// height: 100vh;
 	width: 100%;
 	padding-bottom: 100px;
 }
@@ -140,6 +141,7 @@ main {
 		font-family: 'Abel', san-serif;
 		font-size: 1.4rem;
 		text-align: center;
+		margin: 0px 0px;
 	}
 	.descriptionPlaceholder {
 		font-style: italic;
@@ -165,4 +167,13 @@ footer {
 .showMore {
 	display: flex;
 	justify-content: center;
+}
+
+
+@media (max-width: 770px) {
+	.bathrooms {
+		ul {
+			justify-content: center;
+		}
+	}
 }
