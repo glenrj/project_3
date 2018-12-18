@@ -1,3 +1,9 @@
+// NOTE: I realized after completing this that sometimes the API I am getting the list of bathrooms from has repeat data. It gets data
+// from users submitting bathrooms and it looks like some have multiple submissions. I tested everything with my home address where this
+// wasn't an issue, then tested with HackerYou's and saw that Come As You Are has a number of repeat entries in their API and is probably
+// the worst offender. I just wanted to let you know that I'm not duplicating data or anything, it's just a crowdsourced API so the data 
+// it gives back isn't quite perfect and I wasn't sure if there was anything I could do about that.
+
 
 // Bathroom App Object
 
@@ -70,13 +76,17 @@ bathroomApp.getBathrooms = (latitude, longitude) => {
 			lng: longitude,
 			ada: bathroomApp.ada,
 			unisex: bathroomApp.unisex,
-			page: bathroomApp.currentPage
+			page: 1
 		}
 	}).then(function(response) {
 		// console.log(response);
 		bathroomApp.displayBathrooms(response);
-		bathroomApp.showMoreButton();
-		bathroomApp.showMoreSubmitHandler();
+
+		if (bathroomApp.currentPage == 1) {
+			bathroomApp.currentPage = 2;
+			bathroomApp.showMoreButton();
+			bathroomApp.showMoreSubmitHandler();
+		}
 	});
 }
 
@@ -117,7 +127,6 @@ bathroomApp.showMoreButton = () => {
 bathroomApp.showMoreSubmitHandler = () => {
 	$('#showMore').on('click', function(e){
 		e.preventDefault();
-		bathroomApp.currentPage = bathroomApp.currentPage + 1;
 		$.ajax({
 			url: 'https://www.refugerestrooms.org/api/v1/restrooms/by_location.json',
 			method: 'GET',
@@ -130,6 +139,7 @@ bathroomApp.showMoreSubmitHandler = () => {
 				page: bathroomApp.currentPage
 			}
 		}).then(function(response) {
+			bathroomApp.currentPage = bathroomApp.currentPage + 1;
 			bathroomApp.displayMore(response);
 		})
 	});
