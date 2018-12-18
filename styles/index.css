@@ -95,6 +95,14 @@ main {
       background: #BFBFBF;
       color: #252523; }
 
+.showMore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
 .bathrooms {
   margin-top: 25px; }
   .bathrooms ul {
@@ -147,14 +155,6 @@ footer {
     color: #BFBFBF; }
   footer img {
     width: 12px; }
-
-.showMore {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
 
 @media (max-width: 770px) {
   .bathrooms ul {

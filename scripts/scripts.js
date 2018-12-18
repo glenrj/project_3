@@ -93,7 +93,7 @@ bathroomApp.getBathrooms = (latitude, longitude) => {
 // Show inital 10 bathrooms:
 
 bathroomApp.displayBathrooms  = (bathrooms) => {
-	console.log(bathrooms);
+	// console.log(bathrooms);
 	const bathroomHtml = bathrooms.map(function(bathrooms) {
 		if (!bathrooms.directions) {
 		     return `<li>
@@ -146,7 +146,7 @@ bathroomApp.showMoreSubmitHandler = () => {
 }
 
 bathroomApp.displayMore  = (bathrooms) => {
-	console.log(bathrooms);
+	// console.log(bathrooms);
 	const bathroomHtml = bathrooms.map(function(bathrooms) {
 		const bathroomObj = `<li>
 			<h2>${bathrooms.name}</h2>
